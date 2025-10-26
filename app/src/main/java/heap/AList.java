@@ -1,6 +1,4 @@
-//Author: Ash Summers
 //Date: May 8th 2025
-//Description: Lab 4 ArrayList w/ Generics
 
 package heap;
 
@@ -100,9 +98,6 @@ public class AList<T> {
         return value;
     }
 
-
-    /*  Create and return a T[] of size n.
-     *  This is necessary because generics and arrays don't play well together.*/
     @SuppressWarnings("unchecked")
     protected T[] createArray(int size) {
         return (T[]) new Object[size];

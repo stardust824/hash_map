@@ -1,8 +1,5 @@
-/*
- * Author: Ash Summers
- * Date: May 18th 2025
- * Purpose: Assignment 3 Hash Table Section
- */
+
+// Date: May 18th 2025
 
 package heap;
 
@@ -68,7 +65,6 @@ public class HashTable<K,V> {
      * map contains no mapping for the key.
      * Runtime: average case O(1); worst case O(size) */
     public V get(K key) {
-        // TODO 2.1 - do this together with put.
 
         int hashIndex = (Math.abs(key.hashCode()) % getCapacity());
         Pair cur;
@@ -97,12 +93,6 @@ public class HashTable<K,V> {
      * Precondition: val is not null.
      * Runtime: average case O(1); worst case O(size + a.length)*/
     public V put(K key, V val) {
-        // TODO 2.2
-        //   do this together with get. For now, don't worry about growing the
-        //   array and rehashing.
-        //   Tips:
-        //     - Use the key's hashCode method to find which bucket it belongs in.
-        //     - It's possible for hashCode to return a negative integer.
 
         //check array w/ absolute value of hash % capacity of array
         //hashing it to find the index
@@ -144,10 +134,8 @@ public class HashTable<K,V> {
         }
     }
 
-    /** Return true if this map contains a mapping for the specified key.
-     *  Runtime: average case O(1); worst case O(size) */
+    //Return true if this map contains a mapping for the specified key.
     public boolean containsKey(K key) {
-        // TODO 2.3
         int hashIndex = (Math.abs(key.hashCode()) % getCapacity());
         Pair cur;
 
@@ -161,12 +149,11 @@ public class HashTable<K,V> {
         return false;
     }
 
-    /** Remove the mapping for the specified key from this map if present.
+    /**Remove the mapping for the specified key from this map if present.
      *  Return the previous value associated with key, or null if there was no
      *  mapping for key.
-     *  Runtime: average case O(1); worst case O(size)*/
+     */
     public V remove(K key) {
-        // TODO 2.4
 
         int hashIndex = (Math.abs(key.hashCode()) % getCapacity());
         Pair cur = buckets[hashIndex];
@@ -202,9 +189,6 @@ public class HashTable<K,V> {
         return null;
     }
 
-
-
-    // suggested helper method:
     /* check the load factor; if it exceeds 0.8, double the capacity 
      * and rehash values from the old array to the new array */
     private void growIfNeeded() {

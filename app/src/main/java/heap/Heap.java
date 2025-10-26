@@ -206,8 +206,6 @@ public final class Heap<V, P extends Comparable<P>> {
             bubbleDown(indexAt);
         }
     }
-
-    // Recommended helper method spec:
     /** Return the index of the child of k with smaller priority.
      * if only one child exists, return that child's index
      * Precondition: at least one child exists.*/
